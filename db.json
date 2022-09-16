@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "name": "Zehra",
+      "surName": "Huseynova",
+      "dadName": "Arif",
+      "email": "zehra.hesenova@gmail.com",
+      "birthDay": "1997-02-12",
+      "age": "",
+      "gender": "Qadın",
+      "detailInfo": "Test merhelesi ucun novbeti qeyd deyisdirilmisdir",
+      "phone": "+5151515152626262",
+      "city": "Qəbələ",
+      "education": "Orta",
+      "id": 2
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

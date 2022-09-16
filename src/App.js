@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Home from "./Pages/Home";
+import Lists from "./Pages/Lists";
+import PostList from './Pages/PostLists'
+import Contact from "./Pages/Contact";
+import Detailuserinfo from "./Pages/Detailuserinfo";
+import Edituser from "./Pages/Edituser";
+import { Toaster } from 'react-hot-toast';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Navbar />
+			<Toaster />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/lists" element={<Lists />} />
+				<Route path="/createnewList" element={<PostList />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="/lists/:id" element={<Detailuserinfo />} />
+				<Route path="/lists/edit/:id" element={<Edituser />} />
+			</Routes>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

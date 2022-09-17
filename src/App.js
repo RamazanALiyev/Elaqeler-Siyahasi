@@ -8,6 +8,7 @@ import PostList from './Pages/PostLists'
 import Contact from "./Pages/Contact";
 import Detailuserinfo from "./Pages/Detailuserinfo";
 import Edituser from "./Pages/Edituser";
+import Birthday from "./Pages/Birthday";
 import { Toaster } from 'react-hot-toast';
 function App() {
 	return (
@@ -19,7 +20,8 @@ function App() {
 				<Route path="/lists" element={<Lists />} />
 				<Route path="/createnewList" element={<PostList />} />
 				<Route path="/contact" element={<Contact />} />
-				<Route path="/lists/:id" element={<Detailuserinfo />} />
+				<Route path="/birthday" element={<Birthday />} />
+				<Route path="/lists/detail/:id" element={<Detailuserinfo />} />
 				<Route path="/lists/edit/:id" element={<Edituser />} />
 			</Routes>
 			<Footer />

@@ -27,23 +27,36 @@ code {
 	background-position: center;
 	animation: animate 30s linear infinite;
 }
-.forOverflow tr:last-child{
+.birthday {
+	background-image: url("./assets/birthday.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+}
+.balloon {
+	background-image: url("./assets/balloon.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	filter: grayscale(50%);
+}
+.forOverflow tr:last-child {
 	border: none;
 }
 @keyframes animate {
-  0%{
-    background-position: center;
-  }
-  25%{
-    background-position: bottom;
-  }
-  50%{
-    background-position: center;
-  }
-  75%{
-    background-position: top;
-  }
-  100%{
-    background-position: center;
-  }
+	0% {
+		background-position: center;
+	}
+	25% {
+		background-position: bottom;
+	}
+	50% {
+		background-position: center;
+	}
+	75% {
+		background-position: top;
+	}
+	100% {
+		background-position: center;
+	}
 }

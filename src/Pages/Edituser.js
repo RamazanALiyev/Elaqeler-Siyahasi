@@ -327,7 +327,7 @@ const Edituser = () => {
 						!edituser.gender.select ? false : true
 					}
 					type="submit"
-					className="absolute right-10 bottom-24 bg-yellow-900 flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30"
+					className="absolute right-10 bottom-24 bg-yellow-900 flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30 transition duration-600 ease-out"
 				>
 					<MdPublishedWithChanges className="text-2xl" />
 				</button>

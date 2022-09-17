@@ -31,7 +31,7 @@ export const editCurUser = createAsyncThunk("user/editCurUser", async (editUser,
     return response.data;
 	}
 );
-export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
+export const deleteUser = createAsyncThunk("user/deleteUser", async (id, name, surname) => {
 	try {
 		return await axios
 			.delete(`http://localhost:8000/users/${id}`)

@@ -1,18 +1,18 @@
 {
   "users": [
     {
-      "name": "Zehra",
-      "surName": "Huseynova",
-      "dadName": "Arif",
-      "email": "zehra.hesenova@gmail.com",
-      "birthDay": "1997-02-12",
+      "name": "Ramazan",
+      "surName": "Aliyev",
+      "dadName": "Yashar",
+      "email": "aliyev.ramazan98gmail.com",
+      "birthDay": "1998-04-25",
       "age": "",
-      "gender": "Qadın",
-      "detailInfo": "Test merhelesi ucun novbeti qeyd deyisdirilmisdir",
-      "phone": "+5151515152626262",
-      "city": "Qəbələ",
-      "education": "Orta",
-      "id": 2
+      "gender": "Kişi",
+      "detailInfo": "Test merhelesi ucun yazilmis text",
+      "phone": "+994559055453",
+      "city": "Neftçala",
+      "education": "Magistr",
+      "id": 1
     }
   ],
   "comments": [

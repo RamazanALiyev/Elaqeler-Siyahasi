@@ -68,7 +68,7 @@ const Lists = () => {
 								<td className="border-r px-3 py-4">{user.birthDay}</td>
 								<td className="border-r px-3 py-4">{user.gender}</td>
 								<td className="border-r px-3 py-4 cursor-pointer">
-									<Link to={`/lists/${user.id}`}>
+									<Link to={`/lists/detail/${user.id}`}>
 										<FcInfo className="mx-auto" />
 									</Link>
 								</td>
@@ -79,7 +79,7 @@ const Lists = () => {
 								</td>
 								<td
 									onClick={(id) => {
-										dispatch(deleteUser(user.id));
+										dispatch(deleteUser(user.id, user.name, user.surName));
 										toast.success(
 											`${user.name} ${user.surName} adlı istifadəçi siyahıdan silindi!`
 										);

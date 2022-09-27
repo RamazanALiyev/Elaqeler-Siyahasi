@@ -43,7 +43,7 @@ const PostLists = () => {
 		} else {
 			toast.error("Məlumatlar boş göndərilə bilməz!");
 		}
-	};
+	};	
 	return (
 		<div className="h-[calc(100vh-9rem)] flex justify-center items-center bgImageAzerbaijanFlag">
 			<form

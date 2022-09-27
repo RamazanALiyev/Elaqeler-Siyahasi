@@ -6,7 +6,9 @@ const initialState = {
 	error: "",
 };
 export const fetchUsers = createAsyncThunk("user/fetchUsers", async () => {
-	const response = await axios.get("https://633133d43ea4956cfb58ac8a.mockapi.io/users");
+	const response = await axios.get(
+		"https://633133d43ea4956cfb58ac8a.mockapi.io/users"
+	);
 	return response.data;
 });
 export const newPostUser = createAsyncThunk(
@@ -23,12 +25,14 @@ export const newPostUser = createAsyncThunk(
 		}
 	}
 );
-export const editCurUser = createAsyncThunk("user/editCurUser", async (editUser) => {
+export const editCurUser = createAsyncThunk(
+	"user/editCurUser",
+	async (editUser) => {
 		const response = await axios.put(
-      `https://633133d43ea4956cfb58ac8a.mockapi.io/users/${editUser.id}`,
-      editUser
-    );
-    return response.data;
+			`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${editUser.id}`,
+			editUser
+		);
+		return response.data;
 	}
 );
 export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {

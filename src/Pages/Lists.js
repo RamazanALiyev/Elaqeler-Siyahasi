@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers, deleteUser } from "../features/Userslice";
 import { Link } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 const Lists = () => {
 	const users = useSelector((state) => state.fetchUsers);
 	const dispatch = useDispatch();
@@ -13,6 +14,10 @@ const Lists = () => {
 	}, [dispatch]);
 	return (
 		<div className="min-h-[calc(100vh-9rem)] flex flex-col items-center py-12 bgImageAzerbaijanFlag">
+			<Helmet>
+				<meta charSet="utf-8" />
+				<title>Siyahılar listəsi</title>
+			</Helmet>
 			<h1 className="text-3xl mb-4 text-white">Siyahılar</h1>
 			<table className="w-3/4 bg-zinc-100 rounded-lg">
 				<thead>

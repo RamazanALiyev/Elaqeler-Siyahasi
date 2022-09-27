@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { GrAdd } from "react-icons/gr";
+import { Helmet } from "react-helmet";
 
 const PostLists = () => {
 	const [initailVal, setInitialVal] = useState({
@@ -43,13 +44,17 @@ const PostLists = () => {
 		} else {
 			toast.error("Məlumatlar boş göndərilə bilməz!");
 		}
-	};	
+	};
 	return (
 		<div className="h-[calc(100vh-9rem)] flex justify-center items-center bgImageAzerbaijanFlag">
 			<form
 				onSubmit={handleSubmit}
 				className="w-3/4 border bg-slate-900 flex gap-x-8 flex-wrap justify-center content-center py-4"
 			>
+				<Helmet>
+					<meta charSet="utf-8" />
+					<title>Yeni əlaqələrin yaradılması</title>
+				</Helmet>
 				<label className="relative my-3 w-[30%]">
 					<input
 						onChange={(e) =>

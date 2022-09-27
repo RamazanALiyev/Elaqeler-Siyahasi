@@ -5,7 +5,8 @@ import { editCurUser } from "../features/Userslice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { MdPublishedWithChanges } from 'react-icons/md'
+import { MdPublishedWithChanges } from "react-icons/md";
+import { Helmet } from "react-helmet";
 const Edituser = () => {
 	const pathname = useParams();
 	const [edituser, seteditUser] = useState("");
@@ -13,10 +14,12 @@ const Edituser = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get(`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${pathname.id}`).then((resp) => {
-			seteditUser(resp.data);
-			setLoad(false);
-		});
+		axios
+			.get(`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${pathname.id}`)
+			.then((resp) => {
+				seteditUser(resp.data);
+				setLoad(false);
+			});
 	}, [pathname.id]);
 	const editSubmit = (e) => {
 		e.preventDefault();
@@ -39,7 +42,9 @@ const Edituser = () => {
 			toast.success(
 				`${edituser.name[0]
 					.toUpperCase()
-					.concat(edituser.name.slice(1))} adlı istifadəçi məlumatları ugurlar yenilenmisdir!!!`
+					.concat(
+						edituser.name.slice(1)
+					)} adlı istifadəçi məlumatları ugurlar yenilenmisdir!!!`
 			);
 		} else {
 			toast.error("Məlumatlar boş göndərilə bilməz!");
@@ -48,12 +53,18 @@ const Edituser = () => {
 	return (
 		<div className="h-[calc(100vh-9rem)] flex justify-center items-center bgImageAzerbaijanFlag">
 			{load ? (
-				<p className="w-3/4 h-[60vh] border bg-yellow-900 flex gap-x-8 flex-wrap justify-center content-center text-white">Zəhmət olmasa gözləyin...</p>
+				<p className="w-3/4 h-[60vh] border bg-yellow-900 flex gap-x-8 flex-wrap justify-center content-center text-white">
+					Zəhmət olmasa gözləyin...
+				</p>
 			) : (
 				<form
 					onSubmit={editSubmit}
 					className="w-3/4 border bg-yellow-900 flex gap-x-8 flex-wrap justify-center content-center py-4"
 				>
+					<Helmet>
+						<meta charSet="utf-8" />
+						<title>{edituser?.name} haqqında məlumatların dəyişdirilməsi</title>
+					</Helmet>
 					<label className="relative my-3 w-[30%]">
 						<input
 							onChange={(e) =>
@@ -314,23 +325,25 @@ const Edituser = () => {
 						</span>
 					</label>
 					<button
-					disabled={
-						edituser.name.trim().length !== 0 &&
-						edituser.surName.trim().length !== 0 &&
-						edituser.dadName.trim().length !== 0 &&
-						edituser.email.trim().length !== 0 &&
-						edituser.phone.trim().length !== 0 &&
-						edituser.birthDay.trim().length !== 0 &&
-						edituser.detailInfo.trim().length !== 0 &&
-						!edituser.city.select &&
-						!edituser.education.select &&
-						!edituser.gender.select ? false : true
-					}
-					type="submit"
-					className="absolute right-10 bottom-24 bg-yellow-900 flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30 transition duration-600 ease-out"
-				>
-					<MdPublishedWithChanges className="text-2xl" />
-				</button>
+						disabled={
+							edituser.name.trim().length !== 0 &&
+							edituser.surName.trim().length !== 0 &&
+							edituser.dadName.trim().length !== 0 &&
+							edituser.email.trim().length !== 0 &&
+							edituser.phone.trim().length !== 0 &&
+							edituser.birthDay.trim().length !== 0 &&
+							edituser.detailInfo.trim().length !== 0 &&
+							!edituser.city.select &&
+							!edituser.education.select &&
+							!edituser.gender.select
+								? false
+								: true
+						}
+						type="submit"
+						className="absolute right-10 bottom-24 bg-yellow-900 flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30 transition duration-600 ease-out"
+					>
+						<MdPublishedWithChanges className="text-2xl" />
+					</button>
 				</form>
 			)}
 		</div>

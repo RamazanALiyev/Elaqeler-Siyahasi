@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import man from "../assets/man.png";
 import woman from "../assets/woman.png";
+import {Helmet} from "react-helmet";
 const Detailuserinfo = () => {
 	const pathname = useParams();
 	const [user, setUser] = useState("");
@@ -40,6 +41,10 @@ const Detailuserinfo = () => {
 				</p>
 			) : (
 				<div className="flex">
+					<Helmet>
+						<meta charSet="utf-8" />
+						<title>{user?.name} haqqında məlumat</title>
+					</Helmet>
 					<div className="w-4/6 h-[26rem] border-2 border-slate-900 overflow-hidden">
 						<p className="border-b border-slate-900 h-16 flex justify-center items-center bg-indigo-900 text-white tracking-wider">
 							{user?.name} {user?.surName} haqqında məlumat

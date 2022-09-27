@@ -61,20 +61,25 @@ export default function App() {
 				>
 					{users.users.map((user, index) => (
 						<>
-							{user?.birthDay.slice(5) === formatChechData&& (
+							{user?.birthDay.slice(5) === formatChechData && (
 								<SwiperSlide className="rounded-2xl bg-slate-900 relative">
 									<div className="w-full pt-20 h-full border rounded-2xl border-slate-700 px-4 balloon">
 										<p className="text-center text-3xl">Ad günün mübarək</p>
 										<p className="text-center mt-4 text-3xl bg-white text-slate-900 py-3 rounded-xl">
-											{user.name}
+											{user.name} 🎂
+										</p>
+										<p className="text-center mt-4 text-xl bg-white text-slate-900 py-3 rounded-xl">
+											Bugün tort yeyeceyik {user.name}? 😆
 										</p>
 									</div>
 								</SwiperSlide>
 							)}
-							{user?.birthDay.slice(5) !== formatChechData&& (
+							{user?.birthDay.slice(5) !== formatChechData && (
 								<SwiperSlide className="rounded-2xl bg-slate-900 relative">
 									<div className="w-full pt-20 h-full border rounded-2xl border-slate-700 px-4 balloon">
-										<p className="text-center text-3xl">Bugün tort yemeyeciyik 😏</p>
+										<p className="text-center text-3xl">
+											Bugün tort yemeyeciyik 😏
+										</p>
 										<p className="text-center mt-8 text-xl bg-white text-slate-900 py-3 rounded-xl">
 											Çünki bugün heç kimin ad günü deyil 😃
 										</p>
@@ -85,8 +90,6 @@ export default function App() {
 					))}
 				</Swiper>
 			) : null}
-
-			
 		</>
 	);
 }

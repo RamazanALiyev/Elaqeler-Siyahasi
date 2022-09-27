@@ -6,7 +6,7 @@ const initialState = {
 	error: "",
 };
 export const fetchUsers = createAsyncThunk("user/fetchUsers", async () => {
-	const response = await axios.get("http://localhost:8000/users");
+	const response = await axios.get("https://633133d43ea4956cfb58ac8a.mockapi.io/users");
 	return response.data;
 });
 export const newPostUser = createAsyncThunk(
@@ -14,7 +14,7 @@ export const newPostUser = createAsyncThunk(
 	async (initialPost) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:8000/users`,
+				`https://633133d43ea4956cfb58ac8a.mockapi.io/users`,
 				initialPost
 			);
 			console.log(response.data);
@@ -23,18 +23,18 @@ export const newPostUser = createAsyncThunk(
 		}
 	}
 );
-export const editCurUser = createAsyncThunk("user/editCurUser", async (editUser, id) => {
+export const editCurUser = createAsyncThunk("user/editCurUser", async (editUser) => {
 		const response = await axios.put(
-      `http://localhost:8000/users/${editUser.id}`,
+      `https://633133d43ea4956cfb58ac8a.mockapi.io/users/${editUser.id}`,
       editUser
     );
     return response.data;
 	}
 );
-export const deleteUser = createAsyncThunk("user/deleteUser", async (id, name, surname) => {
+export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
 	try {
 		return await axios
-			.delete(`http://localhost:8000/users/${id}`)
+			.delete(`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${id}`)
 			.then((response) => response.data);
 	} catch (e) {
 		return e.message;

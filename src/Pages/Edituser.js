@@ -13,7 +13,7 @@ const Edituser = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get(`http://localhost:8000/users/${pathname.id}`).then((resp) => {
+		axios.get(`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${pathname.id}`).then((resp) => {
 			seteditUser(resp.data);
 			setLoad(false);
 		});

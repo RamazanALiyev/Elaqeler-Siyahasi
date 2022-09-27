@@ -96,5 +96,4 @@ const Lists = () => {
 		</div>
 	);
 };
-
 export default Lists;

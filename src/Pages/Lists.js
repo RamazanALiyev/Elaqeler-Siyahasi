@@ -13,7 +13,7 @@ const Lists = () => {
 		dispatch(fetchUsers());
 	}, [dispatch]);
 	return (
-		<div className="min-h-[calc(100vh-9rem)] flex flex-col items-center py-12 bgImageAzerbaijanFlag">
+		<div className="min-h-[calc(100vh-20vh)] flex flex-col items-center py-12 bgImageAzerbaijanFlag">
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>Siyahılar listəsi</title>

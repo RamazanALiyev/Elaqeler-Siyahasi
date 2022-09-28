@@ -34,7 +34,7 @@ const Detailuserinfo = () => {
 		curAge--;
 	}
 	return (
-		<div className="h-[calc(100vh-9rem)] flex justify-between items-center px-24 bgImageAzerbaijanFlag">
+		<div className="h-[calc(100vh-20vh)] flex justify-between items-center px-24 bgImageAzerbaijanFlag">
 			{load ? (
 				<p className="w-4/6 h-[26rem] border-2 border-slate-900 flex justify-center items-center">
 					Zəhmət olmasa gözləyin...

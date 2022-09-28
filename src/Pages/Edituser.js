@@ -51,7 +51,7 @@ const Edituser = () => {
 		}
 	};
 	return (
-		<div className="h-[calc(100vh-9rem)] flex justify-center items-center bgImageAzerbaijanFlag">
+		<div className="h-[calc(100vh-20vh)] flex justify-center items-center bgImageAzerbaijanFlag">
 			{load ? (
 				<p className="w-3/4 h-[60vh] border bg-yellow-900 flex gap-x-8 flex-wrap justify-center content-center text-white">
 					Zəhmət olmasa gözləyin...

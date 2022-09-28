@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 const Footer = () => {
 	const router = useLocation();
@@ -10,10 +10,14 @@ const Footer = () => {
 				router.pathname.slice(0, 12) === "/lists/edit/"
 					? "bg-yellow-900"
 					: "bg-slate-900"
-			} h-12 px-8 text-white flex justify-between items-center overflow-hidden `}
+			} text-white h-[10vh] flex items-center`}
 		>
-			<img className="mt-2 object-cover w-[80px] h-full" src={logo} alt="pic" />
-			<p>Bütün hüquqlar qorunur!</p>
+			<div className="flex justify-between items-center w-[95%] mx-auto">
+				<Link className="w-[25%] md:w-[5%] h-full overflow-hidden" to="/">
+					<img className="mt-1 w-[80px] object-cover h-full" src={logo} alt="pic" />
+				</Link>
+				<p>Bütün hüquqlar qorunur!</p>
+			</div>
 		</div>
 	);
 };

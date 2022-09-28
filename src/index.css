@@ -40,9 +40,6 @@ code {
 	background-position: bottom;
 	filter: grayscale(50%);
 }
-.forOverflow tr:last-child {
-	border: none;
-}
 @keyframes animate {
 	0% {
 		background-position: center;

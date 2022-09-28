@@ -46,16 +46,16 @@ const PostLists = () => {
 		}
 	};
 	return (
-		<div className="h-[calc(100vh-9rem)] flex justify-center items-center bgImageAzerbaijanFlag">
+		<div className="min-h-[calc(100vh-20vh)] flex justify-center items-center bgImageAzerbaijanFlag">
 			<form
 				onSubmit={handleSubmit}
-				className="w-3/4 border bg-slate-900 flex gap-x-8 flex-wrap justify-center content-center py-4"
+				className="w-[95%] my-8 md:my-0 md:w-3/4 border bg-slate-900 flex gap-x-8 flex-wrap justify-center content-center py-4"
 			>
 				<Helmet>
 					<meta charSet="utf-8" />
 					<title>Yeni əlaqələrin yaradılması</title>
 				</Helmet>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -72,7 +72,7 @@ const PostLists = () => {
 						Ad
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -89,7 +89,7 @@ const PostLists = () => {
 						Soyad
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -106,7 +106,7 @@ const PostLists = () => {
 						Ata adı
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -123,7 +123,7 @@ const PostLists = () => {
 						Email
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -140,7 +140,7 @@ const PostLists = () => {
 						Əlaqə nömrəsi
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<select
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -234,7 +234,7 @@ const PostLists = () => {
 						<option>Zərdab</option>
 					</select>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<input
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -251,7 +251,7 @@ const PostLists = () => {
 						Doğum tarixi
 					</span>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<select
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -270,7 +270,7 @@ const PostLists = () => {
 						<option>Doktrantura</option>
 					</select>
 				</label>
-				<label className="relative my-3 w-[30%]">
+				<label className="w-[90%] relative my-3 md:w-[30%]">
 					<select
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -287,7 +287,7 @@ const PostLists = () => {
 						<option>Qadın</option>
 					</select>
 				</label>
-				<label className="relative mx-3 mt-3 w-full">
+				<label className="w-[90%] relative mx-3 mt-3 md:w-full">
 					<textarea
 						onChange={(e) =>
 							setInitialVal((initailVal) => ({
@@ -320,9 +320,29 @@ const PostLists = () => {
 							: true
 					}
 					type="submit"
-					className="absolute right-10 bottom-24 bg-indigo-600 flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30 transition duration-600 ease-out"
+					className="hidden absolute right-10 bottom-24 bg-indigo-600 md:flex justify-center items-center rounded-[50%] w-[60px] h-[60px] disabled:opacity-30 transition duration-600 ease-out"
 				>
 					<GrAdd className="text-2xl" />
+				</button>
+				<button
+					disabled={
+						initailVal.name.trim().length !== 0 &&
+						initailVal.surName.trim().length !== 0 &&
+						initailVal.dadName.trim().length !== 0 &&
+						initailVal.email.trim().length !== 0 &&
+						initailVal.phone.trim().length !== 0 &&
+						initailVal.birthDay.trim().length !== 0 &&
+						initailVal.detailInfo.trim().length !== 0 &&
+						!initailVal.city.select &&
+						!initailVal.education.select &&
+						!initailVal.gender.select
+							? false
+							: true
+					}
+					type="submit"
+					className="md:hidden bg-indigo-600 md:flex justify-center items-center h-12 w-[90%] mt-3 text-white disabled:opacity-30 transition duration-600 ease-out"
+				>
+					Siyahılar listəsinə əlavə edin!
 				</button>
 			</form>
 		</div>

@@ -36,13 +36,23 @@ const Lists = () => {
 					<tbody>
 						<tr className="text-center">
 							<td className="h-24" colSpan={9}>
-								Zəhmət olmasa gözləyin...
+								Zəhmət olmasa gözləyin ...
 							</td>
 						</tr>
 					</tbody>
 				)}
-				{!users.loading && users.error ? <div>Error</div> : null}
-				{!users.loading && users.users.length === 0 ? (
+				{!users.loading && users.error ? <tbody>
+					{
+						<tr className="text-center">
+							<td colSpan={9} className="border-r px-3 py-4 w-full">
+								<p className="mb-2 block py-8 bg-rose-500 text-white rounded">
+									Xəta yarandı !!!
+								</p>
+							</td>
+						</tr>
+					}
+				</tbody> : null}
+				{!users.loading && !users.error && users.users.length === 0 ? (
 					<tbody>
 						{
 							<tr className="text-center">

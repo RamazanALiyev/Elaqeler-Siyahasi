@@ -26,17 +26,17 @@ export default function App() {
 		<>
 			{users.loading && (
 				<p className="bg-fuchsia-700 w-2/4 h-24 flex justify-center items-center tracking-wider text-white text-xl rounded-xl">
-					Loading
+					Zəhmət olmasa gözləyin ...
 				</p>
 			)}
 			{!users.loading && users.error ? (
 				<div className="bg-fuchsia-700 w-2/4 h-24 flex justify-center items-center tracking-wider text-white text-xl rounded-xl">
-					Error
+					Xəta yarandı !!!
 				</div>
 			) : null}
-			{!users.loading && users.users.length === 0 ? (
+			{!users.loading && !users.error && users.users.length === 0 ? (
 				<p className="bg-fuchsia-700 w-2/4 h-24 flex justify-center items-center tracking-wider text-white text-xl rounded-xl">
-					Siyahıda istifadəçi yoxdur!
+					Siyahıda istifadəçi yoxdur !!!
 				</p>
 			) : null}
 			{!users.loading && users.users.length ? (

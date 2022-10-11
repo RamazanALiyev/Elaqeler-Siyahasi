@@ -10,7 +10,7 @@ const Lists = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchUsers());
-	}, []);
+	}, [dispatch]);
 	return (
 		<div className="min-h-[calc(100vh-20vh)] flex flex-col items-center py-12 bgImageAzerbaijanFlag">
 			<Helmet>

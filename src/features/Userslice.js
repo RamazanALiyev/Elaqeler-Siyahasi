@@ -20,6 +20,7 @@ export const newPostUser = createAsyncThunk(
 				`https://633133d43ea4956cfb58ac8a.mockapi.io/users`,
 				initialPost
 			);
+			return response
 		} catch (err) {
 			return initialPost;
 		}

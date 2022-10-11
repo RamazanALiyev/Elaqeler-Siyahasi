@@ -24,28 +24,21 @@ const Edituser = () => {
 	const editSubmit = (e) => {
 		e.preventDefault();
 		if (
-			edituser.name.trim().length !== 0 &&
-			edituser.surName.trim().length !== 0 &&
-			edituser.dadName.trim().length !== 0 &&
-			edituser.email.trim().length !== 0 &&
-			edituser.phone.trim().length !== 0 &&
-			edituser.birthDay.trim().length !== 0 &&
-			edituser.detailInfo.trim().length !== 0 &&
-			!edituser.city.select &&
-			!edituser.education.select &&
-			!edituser.gender.select
+			edituser?.name?.trim().length !== 0 &&
+			edituser?.surName?.trim().length !== 0 &&
+			edituser?.dadName?.trim().length !== 0 &&
+			edituser?.email?.trim().length !== 0 &&
+			edituser?.phone?.trim().length !== 0 &&
+			edituser?.birthDay?.trim().length !== 0 &&
+			edituser?.detailInfo?.trim().length !== 0 &&
+			!edituser?.city?.select &&
+			!edituser?.education?.select &&
+			!edituser?.gender?.select
 		) {
 			dispatch(editCurUser(edituser));
 			navigate("/lists", {
 				replace: true,
 			});
-			toast.success(
-				`${edituser.name[0]
-					.toUpperCase()
-					.concat(
-						edituser.name.slice(1)
-					)} adlı istifadəçi məlumatları ugurlar yenilenmisdir!!!`
-			);
 		} else {
 			toast.error("Məlumatlar boş göndərilə bilməz!");
 		}
@@ -326,16 +319,16 @@ const Edituser = () => {
 					</label>
 					<button
 						disabled={
-							edituser.name.trim().length !== 0 &&
-							edituser.surName.trim().length !== 0 &&
-							edituser.dadName.trim().length !== 0 &&
-							edituser.email.trim().length !== 0 &&
-							edituser.phone.trim().length !== 0 &&
-							edituser.birthDay.trim().length !== 0 &&
-							edituser.detailInfo.trim().length !== 0 &&
-							!edituser.city.select &&
-							!edituser.education.select &&
-							!edituser.gender.select
+							edituser?.name?.trim().length !== 0 &&
+								edituser?.surName?.trim().length !== 0 &&
+								edituser?.dadName?.trim().length !== 0 &&
+								edituser?.email?.trim().length !== 0 &&
+								edituser?.phone?.trim().length !== 0 &&
+								edituser?.birthDay?.trim().length !== 0 &&
+								edituser?.detailInfo?.trim().length !== 0 &&
+								!edituser?.city?.select &&
+								!edituser?.education?.select &&
+								!edituser?.gender?.select
 								? false
 								: true
 						}

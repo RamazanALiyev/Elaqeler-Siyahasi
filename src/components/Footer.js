@@ -16,7 +16,7 @@ const Footer = () => {
 				<Link className="w-[25%] md:w-[5%] h-full overflow-hidden" to="/">
 					<img className="mt-1 w-[80px] object-cover h-full" src={logo} alt="pic" />
 				</Link>
-				<p>Bütün hüquqlar qorunur!</p>
+				<p><a href="https://ramazanaliyev.netlify.app/" className="mr-12">Ramazan Aliyev</a><span>Bütün hüquqlar qorunur!</span></p>
 			</div>
 		</div>
 	);

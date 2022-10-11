@@ -4,14 +4,13 @@ import { FiEdit, FiDelete } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchUsers, deleteUser } from "../features/Userslice";
 import { Link } from "react-router-dom";
-import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 const Lists = () => {
 	const users = useSelector((state) => state.fetchUsers);
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(fetchUsers());
-	}, [dispatch]);
+	}, []);
 	return (
 		<div className="min-h-[calc(100vh-20vh)] flex flex-col items-center py-12 bgImageAzerbaijanFlag">
 			<Helmet>
@@ -85,9 +84,6 @@ const Lists = () => {
 								<td
 									onClick={(id) => {
 										dispatch(deleteUser(user.id, user.name, user.surName));
-										toast.success(
-											`${user.name} ${user.surName} adlı istifadəçi siyahıdan silindi!`
-										);
 									}}
 									className="px-2 py-4 pr-6 cursor-pointer"
 								>

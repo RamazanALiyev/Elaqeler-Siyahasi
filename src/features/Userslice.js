@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-hot-toast";
 import axios from "axios";
 const initialState = {
 	loading: false,
@@ -19,7 +20,6 @@ export const newPostUser = createAsyncThunk(
 				`https://633133d43ea4956cfb58ac8a.mockapi.io/users`,
 				initialPost
 			);
-			console.log(response.data);
 		} catch (err) {
 			return initialPost;
 		}
@@ -41,10 +41,9 @@ export const deleteUser = createAsyncThunk("user/deleteUser", async (id) => {
 			.delete(`https://633133d43ea4956cfb58ac8a.mockapi.io/users/${id}`)
 			.then((response) => response.data);
 	} catch (e) {
-		return e.message;
-	} finally {
-		window.location.reload();
+		toast.error(e.message)
 	}
+	finally{window.location.reload()}
 });
 const productSlice = createSlice({
 	name: "user",
